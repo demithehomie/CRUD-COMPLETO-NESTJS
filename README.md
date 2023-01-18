@@ -1,73 +1,55 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Api Nest.js com Autenticação JWT
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## O que é uma API (Application Programming Interface - Interface de Programação da Aplicação )
 
-## Description
+### EXEMPLO DO GARÇOM
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+#### COZINHA = BACKEND -> SERVER SIDE - BANCOS DE DADOS, O LADO QUE O CLIENTE NÃO VÊ
+#### VOCÊ NA MESA = FRONTEND -> CLIENT SIDE - INTERFACES DE USUÁRIO, BOTÕES E TELAS, VISÍVEIS AO CLIENTE
 
-## Installation
+### A API É O QUE PERMITE A INTERMEDIAÇÃO DO BACKEND COM O FRONTEND
 
-```bash
-$ npm install
-```
+#### CADA IDA DO GARÇOM ATÉ A COZINHA, É UMA REQUEST - REQUISIÇÃO DE INFORMAÇÕES
 
-## Running the app
+#### CADA VOLTA DO GARÇOM DA COZINHA ATÉ A MESA, É UMA RESPONSE - RESPOSTA À REQUISIÇÃO DE INFORMAÇÕES
 
-```bash
-# development
-$ npm run start
+## HOJE 18/01/2023
 
-# watch mode
-$ npm run start:dev
+###  VAMOS CRIAR UMA API NEST, CONECTÁ-LA AO BANCO DE DADOS, E NO FUTURO, INSERIR A PRÁTICA DO JWT
 
-# production mode
-$ npm run start:prod
-```
+## ------------------------------------------------
 
-## Test
+# PASSO - A - PASSO PARA A CRIAÇÃO DE UMA API NEST.JS
 
-```bash
-# unit tests
-$ npm run test
+### 1o - nest new "nome do projeto"
 
-# e2e tests
-$ npm run test:e2e
+### 2o - escolher npm como gerenciador de pacotes
 
-# test coverage
-$ npm run test:cov
-```
+### 3o - esperar o download da aplicação
 
-## Support
+### 4o - após o download completo da aplicação, deve-se ir até a pasta com o nome do projeto que você criou.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### 5o - npm run start:dev (executar a aplicação, em modo de reload instantâneo)
 
-## Stay in touch
+### 6o - enquanto a aplicação se inicia, abrir insomnia (ou postman)
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### 7o - abrir um novo terminal e criar um novo resource de usuários na mesma pasta do projeto que criei, com o comando "nest g resource users"
 
-## License
+### 8o - ir na documentação do Nest.js e seguir passo a passo o processo para a criação da sincronia do TypeORM com meu banco de dados local em MySQL.
 
-Nest is [MIT licensed](LICENSE).
+### 9o - criar pasta "database"
+
+### 10o - criar arquivos "database.module.ts" e "database.providers.ts" e populá-los com as dicas e o passo a passo da documentação do typeorm
+
+### 10.1o - manter a principio o syncronize como "false". mante-lo como true antes do tempo, significa criar uma tabela nova toda vez que você mexe nas sua entidade (neste caso, entidade User)
+
+### 11o - configurar a entidade e o dto nos arquivos de entidade e dto, respectivamente, lembrando qye na dto não é necessário inserir o id, mas somente na entidade
+
+### 12o - configurar o users.service.ts para disparar métodos de forma apropriada em nest.js, e não disparar as strings
+
+### 13o - desabilitar o syncronize do typeorm de false pra true
+
+### 14o - testar API (métodos de CRUD) no insomnia ou postman
+
+### 15o - ser feliz!
